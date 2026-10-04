@@ -1,4 +1,4 @@
-# 📊 Expense Tracker Dashboard
+# 📊 ExpenseFlow
 
 > A modern, full-stack personal finance web application and SaaS-style dashboard built with **Vue 3**, **FastAPI**, and **PostgreSQL**. Engineered for tracking income and expenses, organizing transactions into categories, analyzing monthly spending trends, and visualizing financial health through interactive charts.
 
@@ -64,17 +64,6 @@ flowchart TD
         PostgresDB[("PostgreSQL 16 Engine")]
         ORM -->|"Exact Decimal Queries & Migrations"| PostgresDB
     end
-```
-
-### Data Flow Lifecycle (Adding a Transaction):
-1. User clicks **"New Transaction"**; `TransactionForm.vue` opens in a modal dialog.
-2. User selects **Type** (`EXPENSE`), enters **Amount** (`$85.50`), picks **Category** (`Groceries`), enters description, and submits.
-3. Client validates that amount is positive and required fields are populated.
-4. `stores/transactions.js` dispatches `POST /api/v1/transactions` with the Bearer JWT token attached.
-5. FastAPI verifies the JWT token, extracts `current_user.id`, and validates the schema using Pydantic.
-6. `TransactionService` verifies category ownership/default access, ensures category type matches transaction type, and commits a new `Transaction` record using `Numeric(12, 2)`.
-7. Frontend receives the response, updates the reactive table, and refreshes the dashboard summary cards and charts.
-
 ---
 
 ## 📄 License
