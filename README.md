@@ -1,4 +1,4 @@
-# 📊 ExpenseFlow
+# 📊 SpendWise
 
 > A modern, full-stack personal finance web application and SaaS-style dashboard built with **Vue 3**, **FastAPI**, and **PostgreSQL**. Engineered for tracking income and expenses, organizing transactions into categories, analyzing monthly spending trends, and visualizing financial health through interactive charts.
 
